@@ -3,8 +3,9 @@ const axios = require('axios');
 const fs = require('fs').promises;
 
 //точки для взаимодействия с сервисом
-const TOOL_CREATE_CONNECTION_END = 'http://localhost:3000/createConnection';
-const TOOL_RESERVE_COPY_END = 'http://localhost:3000/createTableBackup';
+const SERVICE_HOST = 'http://localhost:3000';
+const TOOL_CREATE_CONNECTION_END = SERVICE_HOST + '/createConnection';
+const TOOL_RESERVE_COPY_END = SERVICE_HOST + '/createTableBackup';
 const version = '1.0.0';
 
 //установка воода вывода
@@ -35,6 +36,8 @@ async function newConnection(){
         dbOptions.database = await getUserInput('Enter database name: ');
         dbOptions.user = await getUserInput('Enter database user: ');
         dbOptions.password = await getUserInput('Enter database password: ');
+
+        console.log('connection...');
 
         // Выполните POST-запрос к localhost:1234 на endpoint /createConnection
         await axios.post(TOOL_CREATE_CONNECTION_END, dbOptions);

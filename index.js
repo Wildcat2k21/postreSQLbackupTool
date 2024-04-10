@@ -4,10 +4,9 @@ const fs = require('fs').promises;
 const path = require('path');
 const chalk = require('chalk');
 const cleaneBackups = require('./modules/cleane');
-const { allowedNodeEnvironmentFlags } = require('process');
 
 //точки для взаимодействия с сервисом
-const SERVICE_HOST = 'http://localhost:3000'; //https://jsonpostresqlbackuptoolservice.onrender.com
+const SERVICE_HOST = 'http://localhost:3000'; //https://jsonpostresqlbackuptoolservice.onrender.com 'http://localhost:3000'
 const TOOL_CREATE_CONNECTION_END = SERVICE_HOST + '/createConnection';
 const TOOL_RESERVE_COPY_END = SERVICE_HOST + '/createTableBackup';
 const RESTORE_TABLES_END = SERVICE_HOST + '/restoreTables';

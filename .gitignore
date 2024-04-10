@@ -1,1 +1,7 @@
 /node_modules
+backup 090424(before cleaned).rar
+backup090424.rar
+sql/database.sql
+log/deleted_answers.txt
+backup/*.json
+cleaned/*.json
